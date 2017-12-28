@@ -36,14 +36,14 @@ class Login extends React.Component{
 		return (
 			<div>
 				{this.props.redirectTo? <Redirect to={this.props.redirectTo}/>:null}
-				{/*没看到redirectTo是哪儿来的*/}
+				{/*从redux传过来的redirectTo*/}
 				<Logo></Logo>
 				<WingBlank>
 					<List>
 						{this.props.msg?<p className='error-msg'>{this.props.msg}</p>:null}
 						<InputItem onChange={v => this.handleChange('user', v)}>用户</InputItem>
 						<WhiteSpace/>
-						<InputItem onChange={v => this.handleChange('pwd', v)}>密码</InputItem>
+						<InputItem onChange={v => this.handleChange('pwd', v)} type='password'>密码</InputItem>
 					</List>
 					<WhiteSpace/>
 					<Button onClick={this.handleLogin} type="primary">登陆</Button>

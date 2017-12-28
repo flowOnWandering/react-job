@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
-
+import { BossInfo } from "./container/bossinfo/bossinfo";
 import Login from './container/login/login'
 import Register from './container/register/register'
 import AuthRoute from './component/authroute/authroute'
@@ -25,7 +25,7 @@ ReactDom.render(
 		<BrowserRouter>
 			<div>
 				<AuthRoute></AuthRoute>
-				<Route path='/boss' component={Boss}></Route>
+				<Route path='/bossinfo' component={BossInfo}></Route>
 				<Route path='/login' component={Login}></Route>
 				<Route path='/register' component={Register}></Route>
 			</div>
