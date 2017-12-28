@@ -55,7 +55,7 @@ class BossInfo extends React.Component{
                         this.props.update(this.state)
                     }}
                     type="primary"
-                ></Button>
+                >保存</Button>
             </div>
         )
     }
