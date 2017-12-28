@@ -36,6 +36,7 @@ class Login extends React.Component{
 		return (
 			<div>
 				{this.props.redirectTo? <Redirect to={this.props.redirectTo}/>:null}
+				{/*没看到redirectTo是哪儿来的*/}
 				<Logo></Logo>
 				<WingBlank>
 					<List>
