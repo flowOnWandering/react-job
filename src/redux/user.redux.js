@@ -40,7 +40,7 @@ export function update(data){
     return dispatch=>{
         axios.post('/user/update',data)
             .then(res => {
-                if (res.status == 200 && res.data.code === 0) {
+                if (res.status === 200 && res.data.code === 0) {
                     dispatch(authSuccess(res.data.data))
                 } else {
                     dispatch(errorMsg(res.data.msg))
@@ -56,7 +56,7 @@ export function login({ user, pwd }) {
     return dispatch => {
         axios.post('/user/login', { user, pwd })
             .then(res => {
-                if (res.status == 200 && res.data.code === 0) {
+                if (res.status === 200 && res.data.code === 0) {
                     // dispatch(registerSuccess({user,pwd,type}))
                     dispatch(authSuccess(res.data.data))
                 } else {
