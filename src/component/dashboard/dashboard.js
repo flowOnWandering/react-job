@@ -12,12 +12,12 @@ function User() {
     return <h2>个人中心页面</h2>
 }
 @connect(
-    state=>state
+    state => state
 )
+class Dashboard extends React.Component {
 
-class Dashboard extends React.Component{
-    render(){
-        const {pathname} = this.props.location
+    render() {
+        const { pathname } = this.props.location
         const user = this.props.user
         const navList = [
             {
@@ -26,7 +26,7 @@ class Dashboard extends React.Component{
                 icon: 'boss',
                 title: '牛人列表',
                 component: Boss,
-                hide: user.type == 'genius'
+                hide: user.type === 'genius'
             },
             {
                 path: '/genius',
@@ -34,7 +34,7 @@ class Dashboard extends React.Component{
                 icon: 'job',
                 title: 'BOSS列表',
                 component: Genius,
-                hide: user.type == 'boss'
+                hide: user.type === 'boss'
             },
             {
                 path: '/msg',
@@ -54,17 +54,22 @@ class Dashboard extends React.Component{
         return(
             <div>
                 <NavBar className='fixd-header' mode='dard'>{navList.find(v => v.path === pathname).title}</NavBar>
-                <div style={{marginTop:45}}>
+                <div style={{ marginTop: 45 }}>
                     <Switch>
-                        {navList.map(v=>(
-                            <Route key={v.path} path={v.path} component={v.component}></Route>//设置路由
+                        {navList.map(v => (
+                            <Route key={v.path} path={v.path} component={v.component}></Route>
                         ))}
                     </Switch>
                 </div>
+
                 <NavLinkBar data={navList}></NavLinkBar>
-                
+
             </div>
         )
+
+
     }
+
 }
+
 export default Dashboard
