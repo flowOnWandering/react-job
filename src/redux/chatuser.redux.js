@@ -19,6 +19,7 @@ export function chatuser(state=initState, action){
 function userList(data){
     return {type:USER_LIST, payload:data}
 }
+//action creator
 export function getUserList(type){
     return dispatch=>{
         axios.get('/user/list?type='+type)

@@ -51,10 +51,12 @@ class Dashboard extends React.Component {
                 component: User
             }
         ]
-        return(
+
+
+        return (
             <div>
-                <NavBar className='fixd-header' mode='dard'>{navList.find(v => v.path === pathname).title}</NavBar>
-                <div style={{ marginTop: 45 }}>
+                <NavBar className='fixd-header' mode='dard'>{navList.find((v) => v.path === pathname).title}</NavBar>
+                <div style={{ marginTop: 45}}>
                     <Switch>
                         {navList.map(v => (
                             <Route key={v.path} path={v.path} component={v.component}></Route>
@@ -62,7 +64,7 @@ class Dashboard extends React.Component {
                     </Switch>
                 </div>
 
-                <NavLinkBar data={navList}></NavLinkBar>
+                <NavLinkBar data={navList} ></NavLinkBar>
 
             </div>
         )
