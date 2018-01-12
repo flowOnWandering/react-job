@@ -7,7 +7,8 @@ import Boss from '../../component/boss/boss'
 import Genius from '../../component/genius/genius'
 import User from '../../component/user/user'
 import Msg from '../msg/msg'
-import { getMsgList, recvMsg } from '../../redux/chat.redux'
+import {getMsgList,recvMsg} from '../../redux/chat.redux'
+
 
 
 @connect(
@@ -16,12 +17,12 @@ import { getMsgList, recvMsg } from '../../redux/chat.redux'
 )
 class Dashboard extends React.Component{
 	componentDidMount(){
-		if(!this.props.chat.chatmsg.length){
+		if (!this.props.chat.chatmsg.length) {
 			this.props.getMsgList()
 			this.props.recvMsg()
 		}
-	}
 
+	}
 	render(){
 		const {pathname} = this.props.location
 		const user = this.props.user
@@ -32,7 +33,7 @@ class Dashboard extends React.Component{
 				icon:'boss',
 				title:'牛人列表',
 				component:Boss,
-				hide:user.type === 'genius'
+				hide:user.type=='genius'
 			},
 			{
 				path:'/genius',
@@ -40,7 +41,7 @@ class Dashboard extends React.Component{
 				icon:'job',
 				title:'BOSS列表',
 				component:Genius,
-				hide:user.type === 'boss'
+				hide:user.type=='boss'
 			},
 			{
 				path:'/msg',
@@ -80,4 +81,8 @@ class Dashboard extends React.Component{
 
 }
 
+
 export default Dashboard
+
+
+
